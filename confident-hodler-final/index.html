@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Confident HODLer - BitcoinTAF Education & Tools</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cyan:#00C8E8;
+  --cyan2:#00a8c4;
+  --gold:#F7931A;
+  --navy:#080d1a;
+  --navy2:#0c1220;
+  --navy3:#101828;
+  --surface:rgba(255,255,255,0.04);
+  --border:rgba(0,200,232,0.18);
+  --text:#e8f0f8;
+  --muted:#7a90a8;
+  --dim:#3a4858;
+  --accent:#ff6b35;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Barlow',sans-serif;background:var(--navy);color:var(--text);overflow-x:hidden;line-height:1.6}
+body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,200,232,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,200,232,0.04) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(8,13,26,0.8);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;}
+.nav-brand{font-family:'Barlow Condensed',sans-serif;font-size:1.4rem;font-weight:700;color:var(--cyan);letter-spacing:0.05em;}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.95rem;transition:color 0.3s ease;}
+.nav-links a:hover{color:var(--cyan)}
+.hero{position:relative;min-height:100vh;padding:120px 2rem 60px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(0,200,232,0.1) 0%,transparent 70%);pointer-events:none;}
+.hero-content{position:relative;z-index:2;max-width:900px;}
+.hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2.5rem,8vw,5rem);font-weight:800;line-height:1.1;margin-bottom:1.5rem;letter-spacing:-0.02em;}
+.hero h1 span{color:var(--gold)}
+.hero-subtitle{font-size:clamp(1.1rem,2.5vw,1.4rem);color:var(--muted);margin-bottom:2rem;max-width:700px;margin-left:auto;margin-right:auto;font-weight:300;}
+.cta-buttons{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:3rem;}
+.btn-primary{background:linear-gradient(135deg,var(--cyan),var(--cyan2));color:#000;padding:18px 48px;border:none;border-radius:8px;font-weight:600;font-size:1rem;cursor:pointer;text-decoration:none;transition:all 0.3s ease;display:inline-block;}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 20px 40px rgba(0,200,232,0.3)}
+.btn-secondary{background:transparent;color:var(--cyan);padding:18px 48px;border:2px solid var(--cyan);border-radius:8px;font-weight:600;font-size:1rem;cursor:pointer;text-decoration:none;transition:all 0.3s ease;display:inline-block;}
+.btn-secondary:hover{background:rgba(0,200,232,0.1)}
+section{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:80px 2rem;border-bottom:1px solid var(--border);}
+.products-section{background:linear-gradient(180deg,rgba(0,200,232,0.05) 0%,transparent 100%);}
+.section-heading{font-family:'Barlow Condensed',sans-serif;font-size:2.5rem;font-weight:700;margin-bottom:3rem;text-align:center;letter-spacing:0.02em;}
+.section-heading span{color:var(--gold)}
+.product-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:2rem;margin-bottom:2rem;transition:all 0.3s ease;}
+.product-card:hover{border-color:var(--cyan);transform:translateY(-8px);box-shadow:0 20px 40px rgba(0,200,232,0.15);}
+.product-icon{font-size:3rem;margin-bottom:1rem;}
+.product-name{font-family:'Barlow Condensed',sans-serif;font-size:1.4rem;font-weight:700;margin-bottom:0.8rem;color:var(--cyan);}
+.product-image{width:100%;height:280px;background:var(--dim);border-radius:8px;margin-bottom:1.5rem;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.product-image img{width:100%;height:100%;object-fit:contain;}
+.testimonial-section{background:linear-gradient(135deg,rgba(0,200,232,0.08),rgba(247,147,26,0.05));text-align:center;}
+.testimonial-box{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:3rem;max-width:700px;margin:0 auto;}
+.quote{font-size:1.3rem;font-style:italic;color:var(--text);margin-bottom:1.5rem;line-height:1.8;}
+.quote-author{color:var(--cyan);font-weight:600;}
+.cta-section{position:relative;min-height:500px;display:flex;align-items:center;justify-content:center;text-align:center;padding:80px 2rem;}
+.cta-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(0,200,232,0.15) 0%,transparent 70%);z-index:1;}
+.cta-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,13,26,0.5) 0%,rgba(8,13,26,0.8) 100%);z-index:1;}
+.cta-content{position:relative;z-index:2;max-width:700px;}
+.cta-section h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2rem,6vw,3rem);font-weight:800;margin-bottom:1.5rem;letter-spacing:-0.01em;}
+.cta-section h2 span{color:var(--gold)}
+.cta-section p:not(.cta-disclaimer){font-size:1.1rem;color:var(--muted);margin-bottom:2rem;line-height:1.8;}
+.cta-disclaimer{font-size:0.85rem;color:var(--dim);margin-top:2rem;line-height:1.6;}
+footer{background:rgba(12,18,32,0.8);border-top:1px solid var(--border);padding:3rem 2rem;text-align:center;display:flex;flex-direction:column;align-items:center;gap:2rem;}
+.footer-brand{font-family:'Barlow Condensed',sans-serif;font-size:1.3rem;font-weight:700;letter-spacing:0.05em;}
+.footer-brand span{color:var(--gold)}
+.footer-links{display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;}
+.footer-links a{color:var(--muted);text-decoration:none;font-size:0.95rem;transition:color 0.3s ease;}
+.footer-links a:hover{color:var(--cyan)}
+.footer-legal{font-size:0.85rem;color:var(--dim);max-width:600px;font-family:'Share Tech Mono',monospace;}
+img{max-width:100%;height:auto;}
+@media (max-width:768px){nav{padding:1rem 1.5rem}.nav-links{gap:1rem;font-size:0.9rem}.hero{padding:100px 1.5rem 40px}section{padding:60px 1.5rem}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">CONFIDENT HODLER</div>
+  <ul class="nav-links">
+    <li><a href="#products">Products</a></li>
+    <li><a href="#cta">Start</a></li>
+  </ul>
+</nav>
+
+<!-- HERO SECTION - 4 PILLARS -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>What If You Had A <span>Crystal Ball</span>?</h1>
+    <p class="hero-subtitle">Not a lucky guess. Not a hunch. Real, data-driven clarity on where Bitcoin and crypto will move next.</p>
+    
+    <div style="margin:2.5rem auto;max-width:1200px;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin-bottom:2rem;">
+        <div style="background:rgba(0,200,232,0.08);border:2px solid var(--cyan);border-radius:12px;overflow:hidden;">
+          <div style="height:200px;overflow:hidden;border-bottom:2px solid var(--cyan);">
+            <img src="images/lt_bitcoin_historical_chart.png" alt="Algorithm" style="width:100%;height:100%;object-fit:contain;">
+          </div>
+          <div style="padding:1.5rem;">
+            <div style="font-weight:700;color:var(--cyan);margin-bottom:0.3rem;font-size:1rem;">🤖 Proprietary AI Algorithm</div>
+            <div style="color:var(--text);font-size:0.9rem;line-height:1.6;">BitcoinTAF's algorithm analyzes hundreds of data points to forecast price movements with uncanny accuracy.</div>
+          </div>
+        </div>
+
+        <div style="background:rgba(247,147,26,0.08);border:2px solid var(--gold);border-radius:12px;overflow:hidden;">
+          <div style="height:200px;overflow:hidden;border-bottom:2px solid var(--gold);">
+            <img src="images/elliot_wave_structure_3.png" alt="Education" style="width:100%;height:100%;object-fit:contain;">
+          </div>
+          <div style="padding:1.5rem;">
+            <div style="font-weight:700;color:var(--gold);margin-bottom:0.3rem;font-size:1rem;">📚 Education That Builds Understanding</div>
+            <div style="color:var(--text);font-size:0.9rem;line-height:1.6;">Comprehensive courses teach you to read charts, understand price action, and recognize patterns.</div>
+          </div>
+        </div>
+
+        <div style="background:rgba(0,200,232,0.08);border:2px solid var(--cyan2);border-radius:12px;overflow:hidden;">
+          <div style="height:200px;overflow:hidden;border-bottom:2px solid var(--cyan2);">
+            <img src="images/hodlnauts_indicator.png" alt="Tools" style="width:100%;height:100%;object-fit:contain;">
+          </div>
+          <div style="padding:1.5rem;">
+            <div style="font-weight:700;color:var(--cyan2);margin-bottom:0.3rem;font-size:1rem;">⚡ Trading Tools That Execute</div>
+            <div style="color:var(--text);font-size:0.9rem;line-height:1.6;">Professional indicators and alerts tell you exactly when to enter and exit.</div>
+          </div>
+        </div>
+
+        <div style="background:rgba(255,107,53,0.08);border:2px solid var(--accent);border-radius:12px;overflow:hidden;">
+          <div style="height:200px;overflow:hidden;border-bottom:2px solid var(--accent);">
+            <img src="images/intro_7.png" alt="Community" style="width:100%;height:100%;object-fit:contain;">
+          </div>
+          <div style="padding:1.5rem;">
+            <div style="font-weight:700;color:var(--accent);margin-bottom:0.3rem;font-size:1rem;">👥 Active Community & Support</div>
+            <div style="color:var(--text);font-size:0.9rem;line-height:1.6;">Active instructors, weekly live webinars, recorded training sessions, and dedicated Telegram channels.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p style="color:var(--gold);font-size:1.1rem;margin:2rem 0;font-weight:600;">Algorithm + Education + Tools + Community = Confidence</p>
+    <p style="color:var(--text);font-size:0.95rem;margin-bottom:2rem;line-height:1.7;">Whether you want to protect your capital before a crash or position for the next bull run, you now have clarity on direction, understanding of the moves, and precision in execution.</p>
+
+    <div class="cta-buttons">
+      <a href="https://bitcointaf.com/confidenthodler" target="_blank" class="btn-primary">See The Complete System →</a>
+      <a href="https://bitcointaf.com/confidenthodler" target="_blank" class="btn-secondary">Explore BitcoinTAF</a>
+    </div>
+    <p style="color:var(--dim);font-size:0.9rem;margin-top:2rem;">Not financial advice. Personal experience and education only.</p>
+  </div>
+</section>
+
+<!-- PRODUCTS SECTION - PILLAR 1 -->
+<section class="products-section" id="products">
+  <h2 class="section-heading">PILLAR 1: Algorithm Reports <span>& Forecasts</span></h2>
+  
+  <div class="product-card" style="border-left:4px solid var(--cyan);">
+    <div class="product-image">
+      <img src="images/btc_wave_structure_report.png" alt="BTC Wave Structure Report">
+    </div>
+    <div class="product-icon">🤖</div>
+    <div class="product-name">Long Term Bitcoin Forecast & Elliott Wave</div>
+    <div style="color:var(--text);font-size:0.9rem;line-height:1.6;">
+      <strong style="color:var(--gold);">Pre-market advantage</strong> — Macro clarity before moves happen. 2-3 reports weekly covering Bitcoin & altcoins with 4-hour and daily chart analysis.
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS SECTION - PILLAR 2 -->
+<section class="products-section">
+  <h2 class="section-heading">PILLAR 2: Complete Education <span>System</span></h2>
+  
+  <div class="product-card" style="border-left:4px solid var(--gold);">
+    <div class="product-image">
+      <img src="images/intro_1.png" alt="Intro">
+    </div>
+    <div class="product-icon">📚</div>
+    <div class="product-name">HODLNauts Foundation + Ultimate Trading Course</div>
+    <div style="color:var(--text);font-size:0.9rem;line-height:1.6;">
+      <strong style="color:var(--gold);">Build permanent trading skills</strong> — HODLNauts foundational course teaches chart reading. Ultimate Trading Course covers 30+ chapters on day trading, swing trading, and long-term strategies.
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS SECTION - PILLAR 3 -->
+<section class="products-section">
+  <h2 class="section-heading">PILLAR 3: Trading Tools <span>& Indicators</span></h2>
+  
+  <div class="product-card" style="border-left:4px solid var(--cyan2);">
+    <div class="product-image">
+      <img src="images/detonator_a_b_c.png" alt="Detonator">
+    </div>
+    <div class="product-icon">⚡</div>
+    <div class="product-name">Detonator A, B & C Indicators</div>
+    <div style="color:var(--text);font-size:0.9rem;line-height:1.6;">
+      <strong style="color:var(--gold);">Most powerful indicator suite</strong> — TradingView professional signals with bot-compatible alerts. 4+ years of daily active use proof.
+    </div>
+  </div>
+
+  <div class="product-card" style="border-left:4px solid var(--accent);">
+    <div class="product-image">
+      <img src="images/hodlfire.png" alt="HODLFIRE">
+    </div>
+    <div class="product-icon">🔥</div>
+    <div class="product-name">HODLFIRE — The Income Indicator</div>
+    <div style="color:var(--text);font-size:0.9rem;line-height:1.6;">
+      <strong style="color:var(--gold);">Proprietary pivot-based system</strong> — 85-100% win rate on various timeframes. Daily to weekly profit opportunities with mechanical precision.
+    </div>
+  </div>
+</section>
+
+<!-- ADDITIONAL IMAGES SHOWCASE SECTION -->
+<section style="background:linear-gradient(180deg,rgba(247,147,26,0.03) 0%,rgba(0,200,232,0.03) 100%);">
+  <h2 class="section-heading">Analysis & Education <span>Resources</span></h2>
+  
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;">
+    <div class="product-card">
+      <div class="product-image">
+        <img src="images/elliot_wave_structure.png" alt="Elliott Wave Structure">
+      </div>
+      <div style="font-weight:600;color:var(--cyan);font-size:0.9rem;">Elliott Wave Structure</div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">
+        <img src="images/elliot_wave_structure_2.png" alt="Elliott Wave Structure 2">
+      </div>
+      <div style="font-weight:600;color:var(--cyan);font-size:0.9rem;">Elliott Wave Structure 2</div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">
+        <img src="images/elliot_wave_4_hr_chart.png" alt="Elliott Wave 4hr">
+      </div>
+      <div style="font-weight:600;color:var(--cyan);font-size:0.9rem;">Elliott Wave 4hr Chart</div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">
+        <img src="images/bitcoin_historical_algo_proof.png" alt="Bitcoin Historical Algo">
+      </div>
+      <div style="font-weight:600;color:var(--cyan);font-size:0.9rem;">Bitcoin Historical Algorithm Proof</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="testimonial-section">
+  <div class="testimonial-box">
+    <div class="quote">"I can't afford not to subscribe. The foresight this gives me is not something I'm willing to give up."</div>
+    <div class="quote-author">— The Confident HODLer</div>
+    <p style="color:var(--muted);margin-top:2rem;font-size:0.95rem;">After four years of active use across reports, courses, and tools, this represents genuine conviction from lived experience.</p>
+  </div>
+</section>
+
+<!-- ASYMMETRIC EDGE -->
+<section style="background:linear-gradient(135deg,rgba(0,200,232,0.1),rgba(247,147,26,0.05));padding:80px 2rem;text-align:center;">
+  <div style="max-width:900px;margin:0 auto;">
+    <p style="color:var(--text);font-size:1.2rem;line-height:2;font-weight:500;">
+      <strong style="color:var(--cyan);">This isn't about luck or timing the market.</strong> It's about having a system that gives you an <strong style="color:var(--gold);">asymmetric edge:</strong> you know more than the crowd, you execute better than the crowd, and you protect yourself when the crowd panics.
+    </p>
+    <p style="color:var(--gold);font-size:1.1rem;margin-top:2rem;font-weight:600;">That's how you build wealth in crypto.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="cta">
+  <div class="cta-bg"></div>
+  <div class="cta-overlay"></div>
+  <div class="cta-content">
+    <h2>Your Journey<br><span>Starts Here</span></h2>
+    <p>The reports, the courses, and the indicators changed how I manage my entire portfolio — protecting capital before trend changes and building a complementary income stream alongside my long-term Bitcoin position.</p>
+    <p style="font-style:italic;color:var(--cyan);margin-bottom:2rem;">If you're ready to stop guessing and start seeing, this is where to begin.</p>
+    <a href="https://bitcointaf.com/confidenthodler" target="_blank" class="btn-primary" style="font-size:1.1rem;padding:18px 52px">Explore BitcoinTAF →</a>
+    <p class="cta-disclaimer">Not financial advice. I am a long-term Bitcoin believer sharing my personal experience.<br>Always conduct your own research before making any financial decisions.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">THE <span>CONFIDENT</span> HODLER</div>
+  <div class="footer-links">
+    <a href="https://bitcointaf.com/confidenthodler" target="_blank">BitcoinTAF</a>
+    <a href="https://bitcointaf.com/confidenthodler" target="_blank">Contact</a>
+  </div>
+  <div class="footer-legal">// This site does not provide financial advice. All content reflects personal experience and opinion only.</div>
+</footer>
+
+</body>
+</html>
