@@ -49,8 +49,8 @@ section{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:80px 
 .product-card:hover{border-color:var(--cyan);transform:translateY(-8px);box-shadow:0 20px 40px rgba(0,200,232,0.15);}
 .product-icon{font-size:3rem;margin-bottom:1rem;}
 .product-name{font-family:'Barlow Condensed',sans-serif;font-size:1.4rem;font-weight:700;margin-bottom:0.8rem;color:var(--cyan);}
-.product-image{width:100%;height:280px;background:var(--dim);border-radius:8px;margin-bottom:1.5rem;display:flex;align-items:center;justify-content:center;overflow:hidden;}
-.product-image img{width:100%;height:100%;object-fit:contain;}
+.product-image{width:100%;background:var(--dim);border-radius:8px;margin-bottom:1.5rem;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.product-image img{width:100%;height:auto;max-height:350px;object-fit:cover;}
 .testimonial-section{background:linear-gradient(135deg,rgba(0,200,232,0.08),rgba(247,147,26,0.05));text-align:center;}
 .testimonial-box{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:3rem;max-width:700px;margin:0 auto;}
 .quote{font-size:1.3rem;font-style:italic;color:var(--text);margin-bottom:1.5rem;line-height:1.8;}
@@ -94,7 +94,7 @@ img{max-width:100%;height:auto;}
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin-bottom:2rem;">
         <div style="background:rgba(0,200,232,0.08);border:2px solid var(--cyan);border-radius:12px;overflow:hidden;">
           <div style="height:200px;overflow:hidden;border-bottom:2px solid var(--cyan);">
-            <img src="images/lt_bitcoin_historical_chart.png" alt="Algorithm" style="width:100%;height:100%;object-fit:contain;">
+            <img src="images/lt_bitcoin_historical_chart.png" alt="Algorithm" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div style="padding:1.5rem;">
             <div style="font-weight:700;color:var(--cyan);margin-bottom:0.3rem;font-size:1rem;">🤖 Proprietary AI Algorithm</div>
@@ -104,7 +104,7 @@ img{max-width:100%;height:auto;}
 
         <div style="background:rgba(247,147,26,0.08);border:2px solid var(--gold);border-radius:12px;overflow:hidden;">
           <div style="height:200px;overflow:hidden;border-bottom:2px solid var(--gold);">
-            <img src="images/elliot_wave_structure_3.png" alt="Education" style="width:100%;height:100%;object-fit:contain;">
+            <img src="images/elliot_wave_structure_3.png" alt="Education" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div style="padding:1.5rem;">
             <div style="font-weight:700;color:var(--gold);margin-bottom:0.3rem;font-size:1rem;">📚 Education That Builds Understanding</div>
@@ -114,7 +114,7 @@ img{max-width:100%;height:auto;}
 
         <div style="background:rgba(0,200,232,0.08);border:2px solid var(--cyan2);border-radius:12px;overflow:hidden;">
           <div style="height:200px;overflow:hidden;border-bottom:2px solid var(--cyan2);">
-            <img src="images/hodlnauts_indicator.png" alt="Tools" style="width:100%;height:100%;object-fit:contain;">
+            <img src="images/hodlnauts_indicator.png" alt="Tools" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div style="padding:1.5rem;">
             <div style="font-weight:700;color:var(--cyan2);margin-bottom:0.3rem;font-size:1rem;">⚡ Trading Tools That Execute</div>
@@ -124,7 +124,7 @@ img{max-width:100%;height:auto;}
 
         <div style="background:rgba(255,107,53,0.08);border:2px solid var(--accent);border-radius:12px;overflow:hidden;">
           <div style="height:200px;overflow:hidden;border-bottom:2px solid var(--accent);">
-            <img src="images/intro_7.png" alt="Community" style="width:100%;height:100%;object-fit:contain;">
+            <img src="images/intro_7.png" alt="Community" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div style="padding:1.5rem;">
             <div style="font-weight:700;color:var(--accent);margin-bottom:0.3rem;font-size:1rem;">👥 Active Community & Support</div>
@@ -149,7 +149,8 @@ img{max-width:100%;height:auto;}
 <section class="products-section" id="products">
   <h2 class="section-heading">PILLAR 1: Algorithm Reports <span>& Forecasts</span></h2>
   
-  <div class="product-card" style="border-left:4px solid var(--cyan);">
+  <div style="display:flex;justify-content:center;">
+  <div class="product-card" style="border-left:4px solid var(--cyan);max-width:455px;">
     <div class="product-image">
       <img src="images/btc_wave_structure_report.png" alt="BTC Wave Structure Report">
     </div>
@@ -159,13 +160,15 @@ img{max-width:100%;height:auto;}
       <strong style="color:var(--gold);">Pre-market advantage</strong> — Macro clarity before moves happen. 2-3 reports weekly covering Bitcoin & altcoins with 4-hour and daily chart analysis.
     </div>
   </div>
+  </div>
 </section>
 
 <!-- PRODUCTS SECTION - PILLAR 2 -->
 <section class="products-section">
   <h2 class="section-heading">PILLAR 2: Complete Education <span>System</span></h2>
   
-  <div class="product-card" style="border-left:4px solid var(--gold);">
+  <div style="display:flex;justify-content:center;">
+  <div class="product-card" style="border-left:4px solid var(--gold);max-width:455px;">
     <div class="product-image">
       <img src="images/intro_1.png" alt="Intro">
     </div>
@@ -175,13 +178,15 @@ img{max-width:100%;height:auto;}
       <strong style="color:var(--gold);">Build permanent trading skills</strong> — HODLNauts foundational course teaches chart reading. Ultimate Trading Course covers 30+ chapters on day trading, swing trading, and long-term strategies.
     </div>
   </div>
+  </div>
 </section>
 
 <!-- PRODUCTS SECTION - PILLAR 3 -->
 <section class="products-section">
   <h2 class="section-heading">PILLAR 3: Trading Tools <span>& Indicators</span></h2>
   
-  <div class="product-card" style="border-left:4px solid var(--cyan2);">
+  <div style="display:flex;justify-content:center;">
+  <div class="product-card" style="border-left:4px solid var(--cyan2);max-width:455px;">
     <div class="product-image">
       <img src="images/detonator_a_b_c.png" alt="Detonator">
     </div>
@@ -191,8 +196,10 @@ img{max-width:100%;height:auto;}
       <strong style="color:var(--gold);">Most powerful indicator suite</strong> — TradingView professional signals with bot-compatible alerts. 4+ years of daily active use proof.
     </div>
   </div>
+  </div>
 
-  <div class="product-card" style="border-left:4px solid var(--accent);">
+  <div style="display:flex;justify-content:center;">
+  <div class="product-card" style="border-left:4px solid var(--accent);max-width:455px;">
     <div class="product-image">
       <img src="images/hodlfire.png" alt="HODLFIRE">
     </div>
@@ -202,13 +209,14 @@ img{max-width:100%;height:auto;}
       <strong style="color:var(--gold);">Proprietary pivot-based system</strong> — 85-100% win rate on various timeframes. Daily to weekly profit opportunities with mechanical precision.
     </div>
   </div>
+  </div>
 </section>
 
 <!-- ADDITIONAL IMAGES SHOWCASE SECTION -->
 <section style="background:linear-gradient(180deg,rgba(247,147,26,0.03) 0%,rgba(0,200,232,0.03) 100%);">
   <h2 class="section-heading">Analysis & Education <span>Resources</span></h2>
   
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;">
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;">
     <div class="product-card">
       <div class="product-image">
         <img src="images/elliot_wave_structure.png" alt="Elliott Wave Structure">
