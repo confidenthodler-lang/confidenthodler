@@ -302,10 +302,53 @@ footer{
 
 /* ── RESPONSIVE ── */
 @media (max-width:768px){
-  nav{padding:1rem 1.5rem}
-  .nav-links{gap:1rem;font-size:0.9rem}
-  .hero{padding:100px 1.5rem 40px}
-  section{padding:60px 1.5rem}
+  nav{padding:0.8rem 1rem}
+  .nav-brand{font-size:1.1rem}
+  .nav-links{gap:0.5rem;font-size:0.85rem}
+  .hero{padding:80px 1rem 40px}
+  section{padding:40px 1rem}
+  
+  /* Comparison grid mobile */
+  .comparison-grid{
+    display:flex !important;
+    flex-direction:column !important;
+    grid-template-columns:none !important;
+    gap:1rem !important;
+  }
+  .comparison-grid > div{
+    padding:1.5rem !important;
+    margin-bottom:1rem;
+  }
+  .comparison-grid > div h3{
+    font-size:1.1rem;
+  }
+  .comparison-grid > div p, .comparison-grid > div div{
+    font-size:0.9rem;
+  }
+  
+  /* Arrow between columns */
+  .comparison-grid > div:nth-child(2){
+    display:flex;
+    justify-content:center;
+    padding:1rem !important;
+    margin:0.5rem 0;
+  }
+  
+  /* CTA buttons mobile */
+  .cta-buttons{
+    flex-direction:column;
+    gap:1rem;
+  }
+  .btn-primary, .btn-secondary{
+    width:100%;
+    padding:16px 32px;
+  }
+}
+    width:100% !important;
+  }
+  .comparison-arrow{
+    display:none !important;
+  }
 }
 </style>
 </head>
@@ -347,7 +390,7 @@ footer{
         This is what separates investors who get crushed by volatility from those who profit from it.
       </p>
 
-      <div style="display:grid;grid-template-columns:1fr auto 1fr;gap:2rem;align-items:center;margin-bottom:3rem;">
+      <div class="comparison-grid" style="display:grid;grid-template-columns:1fr auto 1fr;gap:2rem;align-items:center;margin-bottom:3rem;">
         <!-- PASSIVE INVESTOR -->
         <div style="background:rgba(0,0,0,0.3);border:1px solid rgba(0,200,232,0.1);border-radius:12px;padding:2rem;">
           <h3 style="font-size:1.3rem;color:var(--muted);margin-bottom:1.8rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;">The Passive Investor</h3>
@@ -385,7 +428,7 @@ footer{
 
         <!-- ARROW -->
         <div style="text-align:center;display:flex;justify-content:center;align-items:center;">
-          <div style="font-size:2rem;color:var(--cyan);font-weight:bold;">→</div>
+          <div class="comparison-arrow" style="font-size:2rem;color:var(--cyan);font-weight:bold;">→</div>
         </div>
 
         <!-- INFORMED TRADER -->
