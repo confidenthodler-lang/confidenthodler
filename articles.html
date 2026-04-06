@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Articles and insights on Bitcoin trading education, Elliott Wave analysis, and building financial clarity from The Confident HODLer.">
+<meta name="keywords" content="Bitcoin trading articles, Elliott Wave education, crypto trading insights, BitcoinTAF, The Confident HODLer">
+<meta name="robots" content="index, follow">
+<meta name="author" content="The Confident HODLer">
+<link rel="canonical" href="https://confidenthodler.com/articles">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://confidenthodler.com/articles">
+<meta property="og:title" content="Articles — The Confident HODLer">
+<meta property="og:description" content="Bitcoin trading education, Elliott Wave analysis, and real insights from a 4-year BitcoinTAF user.">
+
+<title>Articles — The Confident HODLer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@700;800&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cyan:#00C8E8;
+  --cyan2:#00a8c4;
+  --gold:#F7931A;
+  --navy:#080d1a;
+  --navy2:#0c1220;
+  --navy3:#101828;
+  --surface:rgba(255,255,255,0.04);
+  --border:rgba(0,200,232,0.18);
+  --text:#e8f0f8;
+  --muted:#7a90a8;
+  --dim:#3a4858;
+  --accent:#ff6b35;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Barlow',sans-serif;background:var(--navy);color:var(--text);overflow-x:hidden;line-height:1.6}
+
+/* ── GRID BG ── */
+body::before{
+  content:'';position:fixed;inset:0;
+  background-image:
+    linear-gradient(rgba(0,200,232,0.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,200,232,0.04) 1px,transparent 1px);
+  background-size:60px 60px;
+  pointer-events:none;z-index:0
+}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(8,13,26,0.8);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border);
+  padding:1rem 2rem;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.nav-brand{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:1.4rem;font-weight:700;
+  color:var(--cyan);letter-spacing:0.05em;
+  text-decoration:none;
+}
+.nav-links{
+  display:flex;gap:2rem;list-style:none;
+}
+.nav-links a{
+  color:var(--muted);text-decoration:none;font-size:0.95rem;
+  transition:color 0.3s ease;
+}
+.nav-links a:hover{color:var(--cyan)}
+.nav-links a.active{color:var(--cyan)}
+
+/* ── PAGE HEADER ── */
+.page-header{
+  position:relative;padding:140px 2rem 60px;
+  text-align:center;overflow:hidden;
+}
+.page-header::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% 0%,rgba(0,200,232,0.08) 0%,transparent 70%);
+  pointer-events:none;
+}
+.page-header-content{position:relative;z-index:2;max-width:700px;margin:0 auto;}
+.page-header h1{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(2.5rem,6vw,3.5rem);
+  font-weight:800;letter-spacing:-0.01em;
+  margin-bottom:1rem;
+}
+.page-header h1 span{color:var(--cyan)}
+.page-header p{
+  color:var(--muted);font-size:1.1rem;font-weight:300;
+}
+
+/* ── ARTICLES GRID ── */
+.articles-container{
+  position:relative;z-index:1;
+  max-width:1000px;margin:0 auto;
+  padding:40px 2rem 80px;
+}
+
+/* ── ARTICLE CARD ── */
+.article-card{
+  background:rgba(255,255,255,0.03);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:2rem 2.5rem;
+  margin-bottom:2rem;
+  transition:border-color 0.3s ease, transform 0.3s ease;
+  display:flex;
+  gap:2rem;
+  align-items:flex-start;
+}
+.article-card:hover{
+  border-color:rgba(0,200,232,0.45);
+  transform:translateY(-2px);
+}
+.article-meta{
+  min-width:120px;
+  text-align:right;
+}
+.article-date{
+  font-size:0.85rem;color:var(--muted);
+  font-family:'Barlow Condensed',sans-serif;
+  letter-spacing:0.05em;
+  text-transform:uppercase;
+}
+.article-platform{
+  display:inline-block;
+  margin-top:0.5rem;
+  font-size:0.75rem;
+  color:var(--cyan);
+  background:rgba(0,200,232,0.1);
+  border:1px solid rgba(0,200,232,0.25);
+  border-radius:4px;
+  padding:2px 8px;
+  letter-spacing:0.05em;
+  text-transform:uppercase;
+}
+.article-divider{
+  width:1px;
+  background:var(--border);
+  align-self:stretch;
+  flex-shrink:0;
+}
+.article-body{
+  flex:1;
+}
+.article-category{
+  font-size:0.8rem;
+  color:var(--gold);
+  text-transform:uppercase;
+  letter-spacing:0.1em;
+  font-weight:600;
+  margin-bottom:0.6rem;
+}
+.article-title{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:1.5rem;
+  font-weight:700;
+  color:var(--text);
+  margin-bottom:0.8rem;
+  line-height:1.2;
+  letter-spacing:0.01em;
+}
+.article-excerpt{
+  color:var(--muted);
+  font-size:0.95rem;
+  line-height:1.7;
+  margin-bottom:1.2rem;
+}
+.btn-read{
+  display:inline-block;
+  color:var(--cyan);
+  font-size:0.9rem;
+  font-weight:600;
+  text-decoration:none;
+  border:1px solid rgba(0,200,232,0.35);
+  border-radius:6px;
+  padding:8px 20px;
+  transition:all 0.3s ease;
+  letter-spacing:0.03em;
+}
+.btn-read:hover{
+  background:rgba(0,200,232,0.1);
+  border-color:var(--cyan);
+}
+
+/* ── EMPTY STATE (shows when only one article exists) ── */
+.coming-soon{
+  text-align:center;
+  padding:3rem 2rem;
+  color:var(--dim);
+  font-size:0.95rem;
+  border:1px dashed var(--dim);
+  border-radius:12px;
+  margin-top:1rem;
+}
+
+/* ── FOOTER ── */
+footer{
+  background:rgba(12,18,32,0.8);border-top:1px solid var(--border);
+  padding:3rem 2rem;text-align:center;
+  display:flex;flex-direction:column;align-items:center;gap:2rem;
+}
+.footer-brand{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:1.3rem;font-weight:700;letter-spacing:0.05em;
+}
+.footer-brand span{color:var(--gold)}
+.footer-links{
+  display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;
+}
+.footer-links a{
+  color:var(--muted);text-decoration:none;font-size:0.95rem;
+  transition:color 0.3s ease;
+}
+.footer-links a:hover{color:var(--cyan)}
+.footer-legal{
+  font-size:0.85rem;color:var(--dim);max-width:600px;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width:768px){
+  nav{padding:0.8rem 1rem}
+  .nav-brand{font-size:1.1rem}
+  .nav-links{gap:0.5rem;font-size:0.85rem}
+  .article-card{flex-direction:column;gap:1rem;padding:1.5rem;}
+  .article-meta{min-width:auto;text-align:left;}
+  .article-divider{display:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-brand">CONFIDENT HODLER</a>
+  <ul class="nav-links">
+    <li><a href="/#products">Products</a></li>
+    <li><a href="/articles" class="active">Articles</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-content">
+    <h1>Articles & <span>Insights</span></h1>
+    <p>Real talk on Bitcoin trading, market structure, and investing in your edge.</p>
+  </div>
+</div>
+
+<!-- ARTICLES LIST -->
+<div class="articles-container">
+
+  <!-- ARTICLE CARD 1 -->
+  <div class="article-card">
+    <div class="article-meta">
+      <div class="article-date">Apr 2026</div>
+      <div class="article-platform">Medium</div>
+    </div>
+    <div class="article-divider"></div>
+    <div class="article-body">
+      <div class="article-category">Trading Education</div>
+      <div class="article-title">The Most Expensive Financial Decision Most People Make Is the One They Keep Avoiding</div>
+      <div class="article-excerpt">The dollar has lost nearly half its purchasing power since 2000. Your savings account isn't keeping pace. Here are five reasons why investing in your trading education is the most powerful financial move you can make right now.</div>
+      <a href="YOUR_MEDIUM_ARTICLE_URL" target="_blank" rel="noopener noreferrer" class="btn-read">Read on Medium →</a>
+    </div>
+  </div>
+
+  <!-- MORE ARTICLES COMING SOON -->
+  <div class="coming-soon">
+    More articles coming soon. New pieces published regularly.
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">THE <span>CONFIDENT</span> HODLER</div>
+  <div class="footer-links">
+    <a href="https://bitcointaf.com/confidenthodler" target="_blank" rel="noopener noreferrer">BitcoinTAF</a>
+    <a href="/articles">Articles</a>
+    <a href="https://bitcointaf.com/confidenthodler" target="_blank" rel="noopener noreferrer">Contact</a>
+  </div>
+  <div class="footer-legal">// This site does not provide financial advice. All content reflects personal experience and opinion only.</div>
+</footer>
+
+</body>
+</html>
